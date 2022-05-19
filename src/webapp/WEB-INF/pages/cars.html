@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <title>Car List</title>
 </head>
-<table th:border="1">
-    <tr>
-        <th>Model</th>
-        <th>Color</th>
-        <th>Year</th>
-        <th>Price</th>
-    </tr>
-    <tr th:each="car, state : ${car}">
-        <td th:utext="${car.getModel()}">Model</td>
-        <td th:utext="${car.getColor()}">Color</td>
-        <td th:utext="${car.getYear()}">Year</td>
-        <td th:utext="${car.getPrice()}">Price</td>
-    </tr>
-</table>
+th:each
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <label style="margin-right: 1.5em" for="each"> th:each : </label>
+        <table style="color: blue" id="each">
+            <tr th:each="car , index : ${carList}">
+                <td th:text="${car.getModel}"></td>
+                <td th:text="${car.getColor}"></td>
+                <td th:text="${car.getYear}"></td>
+                <td th:text="${car.getPrice}"></td>
+                <td th:text="${index}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
 </body>
 </html>
